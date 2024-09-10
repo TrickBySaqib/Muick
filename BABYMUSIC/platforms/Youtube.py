@@ -9,7 +9,7 @@ from pyrogram.enums import MessageEntityType
 from pyrogram.types import Message
 from youtubesearchpython.__future__ import VideosSearch
 
-from Spotify_Music.utils.formatters import time_to_seconds
+from BABYMUSIC.utils.formatters import time_to_seconds
 
 
 async def api_download(vidid, video=False):
