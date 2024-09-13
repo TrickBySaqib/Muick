@@ -44,16 +44,16 @@ async def start(_, msg):
               InlineKeyboardButton("︎•ʏᴛ-ᴍᴜsɪᴄ•", url=f"https://t.me/YOUTUBE_RROBOT"),
               ],
               [
-              InlineKeyboardButton("•ᴅᴇᴇᴘ ᴍᴜsɪᴄ•", url=f"https://t.me/DEEP_MUSIC_ROBOT"),
+              InlineKeyboardButton("•ꜱᴜᴋᴏᴏɴ ᴍᴜꜱɪᴄ•", url=f"https://t.me/DEEP_MUSIC_ROBOT"),
 InlineKeyboardButton("•ᴄʜᴀᴛ ʙᴏᴛ•", url=f"https://t.me/RADHIKA_CHAT_RROBOT"),
 ],
 [
-InlineKeyboardButton("•sᴛʀɪɴɢ-ɢᴇɴ•", url=f"https://t.me/STRING_BABYGEN_BOT"),
-InlineKeyboardButton("•ᴍᴀɴᴀɢᴍᴇɴᴛ•", url=f"https://t.me/SATYA_HELP97_BOT"),
+InlineKeyboardButton("•ꜱᴛʏʟɪꜱʜ ɴᴀᴍᴇ•", url=f"https://t.me/ll_STYLISH_FOUT_CHANNEL_ll"),
+InlineKeyboardButton("•ᴍᴀɴᴀɢᴍᴇɴᴛ•", url=f"http://t.me/ZAYN_HELP44_BOT"),
 ],
 [
-              InlineKeyboardButton("•sᴘᴀᴍ-ʙᴏᴛ•", url=f"https://t.me/SATYASPAMROBOT"),
-              InlineKeyboardButton("•ᴀᴘɴᴀ-ᴍᴜsɪᴄ•︎", url=f"https://t.me/MUSIC_OO_ROBOT"),
+              InlineKeyboardButton("•ꜱᴜᴋᴏᴏɴ ʟɪꜰᴇ•", url=f"https://t.me/SATYASPAMROBOT"),
+              InlineKeyboardButton("•ꜱᴜᴘᴘᴏʀᴛ•︎", url=f"https://t.me/ll_Bot_Support_ll"),
               ],
               [
               InlineKeyboardButton("•sᴛʀɪɴɢ ʜᴀᴄᴋ•", url=f"https://t.me/BABYSTRINGROBOT"),
