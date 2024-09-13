@@ -7,19 +7,19 @@ import httpx
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 start_txt = """**
-✪ ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ╼⃝𖠁 𝐁ʌʙʏ ꭙ 𝐌ᴜsɪᴄ 𖠁⃝╾ ʙᴏᴛ ✪
+✪ ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ╼⃝𖠁 𝗦꯭𝘂‌꯭𝐤⃪ꭷ‌⃪꯭꯭꯭꯭꯭ꭷ‌⃪꯭꯭꯭꯭፝֟ؖ۬𝛈꯭ 𝗠⃪꯭ᴜ⃪꯭֟፝ؖ۬s⃪꯭ɪ꯭ᴄ𝄟 𖠁⃝╾ ʙᴏᴛ ✪
  
  ➲ ʙsᴅᴋ ʀᴇᴘᴏ ʟᴇɢᴀ ◉‿◉ ✰
  
- ➲ ᴘᴇʜʟᴇ ᴜᴛᴛᴀᴍ ᴋᴏ ᴘᴀᴘᴀ ʙᴏʟ ✰
+ ➲ ᴘᴇʜʟᴇ ᴢᴀʏɴ ᴋᴏ ᴘᴀᴘᴀ ʙᴏʟ ✰
  
  ➲ ᴄʜᴜᴘ ᴄʜᴜᴘ ʙᴏᴛ ʟᴇᴋᴇ ɴɪᴋᴀʟ ✰
  
  ➲ ʀᴇᴘᴏs ᴛᴏ ɴᴀʜɪ ᴍɪʟᴇɢᴀ ʙᴇᴛᴀ ⊂◉‿◉ ✰
  
- ➲ ᴀɢʀ ᴄʜᴀʜɪʏᴇ ᴛᴏ ᴜᴛᴛᴀᴍ ᴋᴏ ᴘᴀᴘᴀ ʙᴏʟɴᴀ ᴘᴀᴅᴇɢᴀ ✰
+ ➲ ᴀɢʀ ᴄʜᴀʜɪʏᴇ ᴛᴏ ᴢᴀʏɴ ᴋᴏ ᴘᴀᴘᴀ ʙᴏʟɴᴀ ᴘᴀᴅᴇɢᴀ ✰
  
- ► ʀᴀᴅʜᴇ ʀᴀᴅʜᴇ ฅ( ̳• ◡ • ̳)ฅ
+ ►  ฅ( ̳• ◡ • ̳)ฅ
 **"""
 
 
@@ -32,11 +32,11 @@ async def start(_, msg):
           InlineKeyboardButton("•ᴀᴅᴅ ᴍᴇ•", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
         ],
         [
-          InlineKeyboardButton("•sᴜᴘᴘᴏʀᴛ•", url="https://t.me/+j6FO8pK8IIkxZDU1"),
-          InlineKeyboardButton("•ᴏᴡɴᴇʀ•", url="https://t.me/UTTAM470"),
+          InlineKeyboardButton("•sᴜᴘᴘᴏʀᴛ•", url="https://t.me/+C8NQDFeJJwNiNmVl"),
+          InlineKeyboardButton("•ᴏᴡɴᴇʀ•", url="https://t.me/ll_Oye_Zayn_ll"),
           ],
                [
-                InlineKeyboardButton("•ᴜᴘᴅᴀᴛᴇs•", url="https://t.me/BABY09_WORLD"),
+                InlineKeyboardButton("•ᴜᴘᴅᴀᴛᴇs•", url="https://t.me/ll_Bot_Promotion_ll"),
 
 ],
 [
@@ -85,7 +85,7 @@ async def repo(_, message):
             list_of_users += f"{count}. [{user['login']}]({user['html_url']})\n"
             count += 1
 
-        text = f"""[•ʙᴏᴛ-ᴏᴡɴᴇʀ•](https://t.me/UTTAM470) | [•ᴜᴘᴅᴀᴛᴇs•](https://t.me/BABY09_WORLD)
+        text = f"""[•ʙᴏᴛ-ᴏᴡɴᴇʀ•](https://t.me/ll_Oye_Zayn_ll) | [•ᴜᴘᴅᴀᴛᴇs•](https://t.me/ll_Bot_Promotion_ll)
 | 𝖢𝖮𝖭𝖳𝖱𝖨𝖡𝖴𝖳𝖮𝖱𝖲 |
 ----------------
 {list_of_users}"""
