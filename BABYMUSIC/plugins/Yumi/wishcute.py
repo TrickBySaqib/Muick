@@ -4,7 +4,7 @@ import random
 import requests
 from BABYMUSIC import app 
 
-SUPPORT_CHAT = "https://t.me/+C8NQDFeJJwNiNmVl"
+SUPPORT_CHAT = "/+C8NQDFeJJwNiNmVl"
 
 @app.on_message(filters.command("wish"))
 async def wish(_, m):
