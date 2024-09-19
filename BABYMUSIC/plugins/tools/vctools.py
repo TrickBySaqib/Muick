@@ -1,206 +1,105 @@
-import asyncio
-from typing import Optional
-from random import randint
-from pyrogram.types import Message, ChatPrivileges
 from pyrogram import Client, filters
-from pyrogram.raw.functions.channels import GetFullChannel
-from pyrogram.raw.functions.messages import GetFullChat
-from pyrogram.raw.types import InputGroupCall, InputPeerChannel, InputPeerChat
-from BABYMUSIC.utils.database import *
+from pyrogram.types import Message
+from SONALI import app
+from pyrogram import *
+from pyrogram.types import *
+from config import OWNER_ID
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.raw.functions.phone import CreateGroupCall, DiscardGroupCall
-from pyrogram.errors import UserAlreadyParticipant, UserNotParticipant, ChatAdminRequired
-from BABYMUSIC import app, Userbot
-from typing import List, Union
-from pyrogram import filters
-from BABYMUSIC.core.call import BABY
-from pyrogram.types import VideoChatEnded, Message
-from pytgcalls import PyTgCalls, StreamType
-from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
-from pytgcalls.exceptions import (NoActiveGroupCall, TelegramServerError, AlreadyJoinedError)
-
-@app.on_message(filters.command(["vcinfo"], ["/", "!"]))
-async def strcall(client, message):
-    assistant = await group_assistant(BABY, message.chat.id)
-    try:
-        await assistant.join_group_call(message.chat.id, AudioPiped("./BABYMUSIC/assets/call.mp3"), stream_type=StreamType().pulse_stream)
-        text = "- Beloveds in the call 🫶 :\n\n"
-        participants = await assistant.get_participants(message.chat.id)
-        k = 0
-        for participant in participants:
-            info = participant
-            if info.muted == False:
-                mut = "ꜱᴘᴇᴀᴋɪɴɢ 🗣 "
-            else:
-                mut = "ᴍᴜᴛᴇᴅ 🔕 "
-            user = await client.get_users(participant.user_id)
-            k += 1
-            text += f"{k} ➤ {user.mention} ➤ {mut}\n"
-        text += f"\nɴᴜᴍʙᴇʀ ᴏꜰ ᴘᴀʀᴛɪᴄɪᴘᴀɴᴛꜱ : {len(participants)}"
-        await message.reply(f"{text}")
-        await asyncio.sleep(7)
-        await assistant.leave_group_call(message.chat.id)
-    except NoActiveGroupCall:
-        await message.reply(f"ᴛʜᴇ ᴄᴀʟʟ ɪꜱ ɴᴏᴛ ᴏᴘᴇɴ ᴀᴛ ᴀʟʟ")
-    except TelegramServerError:
-        await message.reply(f"ꜱᴇɴᴅ ᴛʜᴇ ᴄᴏᴍᴍᴀɴᴅ ᴀɢᴀɪɴ, ᴛʜᴇʀᴇ ɪꜱ ᴀ ᴘʀᴏʙʟᴇᴍ ᴡɪᴛʜ ᴛʜᴇ ᴛᴇʟᴇɢʀᴀᴍ ꜱᴇʀᴠᴇʀ ❌")
-    except AlreadyJoinedError:
-        text = "ʙᴇʟᴏᴠᴇᴅꜱ ɪɴ ᴛʜᴇ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ 🫶 :\n\n"
-        participants = await assistant.get_participants(message.chat.id)
-        k = 0
-        for participant in participants:
-            info = participant
-            if info.muted == False:
-                mut = "ꜱᴘᴇᴀᴋɪɴɢ 🗣"
-            else:
-                mut = "ᴍᴜᴛᴇᴅ 🔕 "
-            user = await client.get_users(participant.user_id)
-            k += 1
-            text += f"{k} ➤ {user.mention} ➤ {mut}\n"
-        text += f"\nɴᴜᴍʙᴇʀ ᴏꜰ ᴘᴀʀᴛɪᴄɪᴘᴀɴᴛꜱ : {len(participants)}"
-        await message.reply(f"{text}")
-
-
-other_filters = filters.group  & ~filters.via_bot & ~filters.forwarded
-other_filters2 = (
-    filters.private  & ~filters.via_bot & ~filters.forwarded
+from pyrogram.raw.types import InputGroupCall
+from SONALI.utils.database import get_assistant
+from telethon.tl.functions.phone import (
+    CreateGroupCallRequest,
+    DiscardGroupCallRequest,
+    GetGroupCallRequest,
+    InviteToGroupCallRequest,
 )
 
 
-def command(commands: Union[str, List[str]]):
-    return filters.command(commands, "")
+# vc on
+@app.on_message(filters.video_chat_started)
+async def brah(_, msg):
+    await msg.reply("**😍ᴠɪᴅᴇᴏ ᴄʜᴀᴛ sᴛᴀʀᴛᴇᴅ🥳**")
 
 
-  ################################################
-async def get_group_call(
-    client: Client, message: Message, err_msg: str = ""
-) -> Optional[InputGroupCall]:
-    assistant = await get_assistant(message.chat.id)
-    chat_peer = await assistant.resolve_peer(message.chat.id)
-    if isinstance(chat_peer, (InputPeerChannel, InputPeerChat)):
-        if isinstance(chat_peer, InputPeerChannel):
-            full_chat = (
-                await assistant.invoke(GetFullChannel(channel=chat_peer))
-            ).full_chat
-        elif isinstance(chat_peer, InputPeerChat):
-            full_chat = (
-                await assistant.invoke(GetFullChat(chat_id=chat_peer.chat_id))
-            ).full_chat
-        if full_chat is not None:
-            return full_chat.call
-    await app.send_message(f"No group ᴠᴏɪᴄᴇ ᴄʜᴀᴛ Found** {err_msg}")
-    return False
+# vc off
+@app.on_message(filters.video_chat_ended)
+async def brah2(_, msg):
+    await msg.reply("**😕ᴠɪᴅᴇᴏ ᴄʜᴀᴛ ᴇɴᴅᴇᴅ💔**")
 
-@app.on_message(filters.command(["vcstart","startvc"], ["/", "!"]))
-async def start_group_call(c: Client, m: Message):
-    chat_id = m.chat.id
-    assistant = await get_assistant(chat_id)
-    ass = await assistant.get_me()
-    assid = ass.id
-    if assistant is None:
-        await app.send_message(chat_id, "ᴇʀʀᴏʀ ᴡɪᴛʜ ᴀꜱꜱɪꜱᴛᴀɴᴛ")
-        return
-    msg = await app.send_message(chat_id, "ꜱᴛᴀʀᴛɪɴɢ ᴛʜᴇ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ..")
+
+# invite members on vc
+@app.on_message(filters.video_chat_members_invited)
+async def brah3(app: app, message: Message):
+    text = f"➻ {message.from_user.mention}\n\n**๏ ɪɴᴠɪᴛɪɴɢ ɪɴ ᴠᴄ ᴛᴏ :**\n\n**➻ **"
+    x = 0
+    for user in message.video_chat_members_invited.users:
+        try:
+            text += f"[{user.first_name}](tg://user?id={user.id}) "
+            x += 1
+        except Exception:
+            pass
+
     try:
-        peer = await assistant.resolve_peer(chat_id)
-        await assistant.invoke(
-            CreateGroupCall(
-                peer=InputPeerChannel(
-                    channel_id=peer.channel_id,
-                    access_hash=peer.access_hash,
-                ),
-                random_id=assistant.rnd_id() // 9000000000,
-            )
-        )
-        await msg.edit_text("ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ꜱᴛᴀʀᴛᴇᴅ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ⚡️~!")
-    except ChatAdminRequired:
-      try:    
-        await app.promote_chat_member(chat_id, assid, privileges=ChatPrivileges(
-                can_manage_chat=False,
-                can_delete_messages=False,
-                can_manage_video_chats=True,
-                can_restrict_members=False,
-                can_change_info=False,
-                can_invite_users=False,
-                can_pin_messages=False,
-                can_promote_members=False,
+        invite_link = await app.export_chat_invite_link(message.chat.id)
+        add_link = f"https://t.me/{app.username}?startgroup=true"
+        reply_text = f"{text} 🤭🤭"
+
+        await message.reply(
+            reply_text,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [InlineKeyboardButton(text="๏ ᴊᴏɪɴ ᴠᴄ ๏", url=add_link)],
+                ]
             ),
         )
-        peer = await assistant.resolve_peer(chat_id)
-        await assistant.invoke(
-            CreateGroupCall(
-                peer=InputPeerChannel(
-                    channel_id=peer.channel_id,
-                    access_hash=peer.access_hash,
-                ),
-                random_id=assistant.rnd_id() // 9000000000,
-            )
-        )
-        await app.promote_chat_member(chat_id, assid, privileges=ChatPrivileges(
-            can_manage_chat=False,
-            can_delete_messages=False,
-            can_manage_video_chats=False,
-            can_restrict_members=False,
-            can_change_info=False,
-            can_invite_users=False,
-            can_pin_messages=False,
-            can_promote_members=False,
-            ),
-        )                              
-        await msg.edit_text("ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ꜱᴛᴀʀᴛᴇᴅ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ⚡️~!")
-      except:
-         await msg.edit_text("ɢɪᴠᴇ ᴛʜᴇ ʙᴏᴛ ᴀʟʟ ᴘᴇʀᴍɪꜱꜱɪᴏɴꜱ ᴀɴᴅ ᴛʀʏ ᴀɢᴀɪɴ ⚡")
-
-@app.on_message(filters.command(["vcend","endvc"], ["/", "!"]))
-async def stop_group_call(c: Client, m: Message):
-    chat_id = m.chat.id
-    assistant = await get_assistant(chat_id)
-    ass = await assistant.get_me()
-    assid = ass.id
-    if assistant is None:
-        await app.send_message(chat_id, "ᴇʀʀᴏʀ ᴡɪᴛʜ ᴀꜱꜱɪꜱᴛᴀɴᴛ")
-        return
-    msg = await app.send_message(chat_id, "ᴄʟᴏꜱɪɴɢ ᴛʜᴇ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ..")
-    try:
-        if not (
-           group_call := (
-               await get_group_call(assistant, m, err_msg=", ɢʀᴏᴜᴘ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ᴀʟʀᴇᴀᴅʏ ᴇɴᴅᴇᴅ")
-           )
-        ):  
-           return
-        await assistant.invoke(DiscardGroupCall(call=group_call))
-        await msg.edit_text("ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ᴄʟᴏꜱᴇᴅ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ⚡️~!")
     except Exception as e:
-      if "GROUPCALL_FORBIDDEN" in str(e):
-       try:    
-         await app.promote_chat_member(chat_id, assid, privileges=ChatPrivileges(
-                can_manage_chat=False,
-                can_delete_messages=False,
-                can_manage_video_chats=True,
-                can_restrict_members=False,
-                can_change_info=False,
-                can_invite_users=False,
-                can_pin_messages=False,
-                can_promote_members=False,
-             ),
-         )
-         if not (
-           group_call := (
-               await get_group_call(assistant, m, err_msg=", ɢʀᴏᴜᴘ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ᴀʟʀᴇᴀᴅʏ ᴇɴᴅᴇᴅ")
-           )
-         ):  
-           return
-         await assistant.invoke(DiscardGroupCall(call=group_call))
-         await app.promote_chat_member(chat_id, assid, privileges=ChatPrivileges(
-            can_manage_chat=False,
-            can_delete_messages=False,
-            can_manage_video_chats=False,
-            can_restrict_members=False,
-            can_change_info=False,
-            can_invite_users=False,
-            can_pin_messages=False,
-            can_promote_members=False,
-            ),
-         )                              
-         await msg.edit_text("ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ᴄʟᴏꜱᴇᴅ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ⚡️~!")
-       except:
-         await msg.edit_text("ɢɪᴠᴇ ᴛʜᴇ ʙᴏᴛ ᴀʟʟ ᴘᴇʀᴍɪꜱꜱɪᴏɴꜱ ᴀɴᴅ ᴛʀʏ ᴀɢᴀɪɴ")
+        print(f"Error: {e}")
+
+
+####
+
+
+@app.on_message(filters.command("math", prefixes="/"))
+def calculate_math(client, message):
+    expression = message.text.split("/math ", 1)[1]
+    try:
+        result = eval(expression)
+        response = f"ᴛʜᴇ ʀᴇsᴜʟᴛ ɪs : {result}"
+    except:
+        response = "ɪɴᴠᴀʟɪᴅ ᴇxᴘʀᴇssɪᴏɴ"
+    message.reply(response)
+
+
+@app.on_message(filters.command(["spg"], ["/", "!", "."]))
+async def search(event):
+    msg = await event.respond("Searching...")
+    async with aiohttp.ClientSession() as session:
+        start = 1
+        async with session.get(
+            f"https://content-customsearch.googleapis.com/customsearch/v1?cx=ec8db9e1f9e41e65e&q={event.text.split()[1]}&key=AIzaSyAa8yy0GdcGPHdtD083HiGGx_S0vMPScDM&start={start}",
+            headers={"x-referer": "https://explorer.apis.google.com"},
+        ) as r:
+            response = await r.json()
+            result = ""
+
+            if not response.get("items"):
+                return await msg.edit("No results found!")
+            for item in response["items"]:
+                title = item["title"]
+                link = item["link"]
+                if "/s" in item["link"]:
+                    link = item["link"].replace("/s", "")
+                elif re.search(r"\/\d", item["link"]):
+                    link = re.sub(r"\/\d", "", item["link"])
+                if "?" in link:
+                    link = link.split("?")[0]
+                if link in result:
+                    # remove duplicates
+                    continue
+                result += f"{title}\n{link}\n\n"
+            prev_and_next_btns = [
+                Button.inline("▶️Next▶️", data=f"next {start+10} {event.text.split()[1]}")
+            ]
+            await msg.edit(result, link_preview=False, buttons=prev_and_next_btns)
+            await session.close()
