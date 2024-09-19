@@ -26,6 +26,6 @@ async def chat_gpt(bot, message):
         else:
             a = message.text.split(' ', 1)[1]
             r=api.gemini(a)["results"]
-            text=f"❍ ʜᴇʏ ʙᴀʙʏ\ ᴀʟɪᴠᴇ 🥀 ᴀɴᴅ ʀᴜɴɴɪɴɢ ғɪɴᴇ wɪтн ᴀ ᴘɪɴɢ oғ\n➥ `{ms}` ms\n\n<b>❍ᴘᴏᴡᴇʀᴇᴅ ʙʏ➛[ꜱᴜᴋᴏᴏɴ ᴍᴜꜱɪᴄ™](https://t.me/ll_Bot_Promotion_ll) </b>",     
+            await message.reply_text(f" {r} \n\n🌸 ᴘᴏᴡᴇʀᴇᴅ @ll_Bot_Promotion_ll", parse_mode=ParseMode.MARKDOWN)     
     except Exception as e:
         await message.reply_text(f"**ᴇʀʀᴏʀ: {e} ")
