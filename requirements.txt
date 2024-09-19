@@ -63,4 +63,4 @@ yt-dlp
 youtube-search
 youtube-search-python
 httpx
-BadAPI
+git+https://github.com/badmunda98/BadAPI
