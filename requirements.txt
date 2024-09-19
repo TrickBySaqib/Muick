@@ -64,3 +64,5 @@ youtube-search
 youtube-search-python
 httpx
 git+https://github.com/badmunda98/BadAPI
+MukeshAPI
+googlesearch-python
