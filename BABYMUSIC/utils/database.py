@@ -679,3 +679,12 @@ async def remove_card(cc: str):
     if not is_exist:
         return
     return await cardsdb.delete_one({"cc": cc})
+
+async def get_served_users() -> list:
+    users_list = []
+    async for user in usersdb.find({"user_id": {"$gt": 0}}):
+        users_list.append(user)
+    return users_list
+
+async def delete_served_user(user_id: int):
+    await usersdb.delete_one({"user_id": user_id})
