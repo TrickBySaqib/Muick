@@ -1,8 +1,8 @@
 import asyncio
 from pyrogram.enums import ChatType, ChatMemberStatus
-from BABMUSIC import app
+from BABYMUSIC import app
 from pyrogram import filters
-from BABMUSIC.utils.RAUSHAN_ban import admin_filter
+from BABYMUSIC.utils.RAUSHAN_ban import admin_filter
 
 
 
