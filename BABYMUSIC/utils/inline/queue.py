@@ -80,7 +80,7 @@ def aq_markup(_, chat_id):
         [
             InlineKeyboardButton(
                 text="๏ ᴍᴏʀᴇ ๏",
-                url="https://t.me/ll_Bot_Support_ll",
+                url="https://t.me/+AX2XZE_qJMY4M2Q1",
             ),
         ],
     ]
