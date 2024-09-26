@@ -1,4 +1,4 @@
-from PBXMUSIC import app
+from BABYMUSIC import app
 from pyrogram import filters
 from pyrogram.types import ChatMemberUpdated
 from PIL import Image, ImageDraw, ImageFont
@@ -16,7 +16,7 @@ from PIL import ImageDraw, Image, ImageFont, ImageChops
 from pyrogram import *
 from pyrogram.types import *
 from logging import getLogger
-from PBXMUSIC.utils.database import get_assistant
+from BABYMUSIC.utils.database import get_assistant
 from time import time
 import asyncio
 
