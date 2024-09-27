@@ -14,7 +14,7 @@ async def get_thumb(videoid):
         return YOUTUBE_IMG_URL
 
 
-async def gen_qthumb(vidid):
+async def get_qthumb(vidid):
     try:
         query = f"https://www.youtube.com/watch?v={vidid}"
         results = VideosSearch(query, limit=1)
