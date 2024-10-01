@@ -67,3 +67,4 @@ git+https://github.com/badmunda98/BadAPI
 MukeshAPI
 googlesearch-python
 telethon
+youtube-search-python
