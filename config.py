@@ -4,7 +4,6 @@ from os import getenv
 # ------------------------------------
 from dotenv import load_dotenv
 
-load_dotenv()  # This should load the .env file
 from pyrogram import filters
 # ------------------------------------
 # ------------------------------------
