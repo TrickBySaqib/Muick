@@ -17,9 +17,9 @@ from pytgcalls.types.input_stream.quality import HighQualityAudio, MediumQuality
 from pytgcalls.types.stream import StreamAudioEnded
 
 import config
-from SONALI import LOGGER, YouTube, app
-from SONALI.misc import db
-from SONALI.utils.database import (
+from BABYMUSIC import LOGGER, YouTube, app
+from BABYMUSIC.misc import db
+from BABYMUSIC.utils.database import (
     add_active_chat,
     add_active_video_chat,
     get_lang,
