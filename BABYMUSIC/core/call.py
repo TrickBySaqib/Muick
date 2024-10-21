@@ -31,11 +31,11 @@ from BABYMUSIC.utils.database import (
     remove_active_video_chat,
     set_loop,
 )
-from SONALI.utils.exceptions import AssistantErr
-from SONALI.utils.formatters import check_duration, seconds_to_min, speed_converter
-from SONALI.utils.inline.play import stream_markup, telegram_markup
-from SONALI.utils.stream.autoclear import auto_clean
-from SONALI.utils.thumbnails import get_thumb
+from BABYMUSIC.utils.exceptions import AssistantErr
+from BABYMUSIC.utils.formatters import check_duration, seconds_to_min, speed_converter
+from BABYMUSIC.utils.inline.play import stream_markup, telegram_markup
+from BABYMUSIC.utils.stream.autoclear import auto_clean
+from BABYMUSIC.utils.thumbnails import get_thumb
 from strings import get_string
 
 autoend = {}
