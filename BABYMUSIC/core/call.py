@@ -17,9 +17,9 @@ from pytgcalls.types.input_stream.quality import HighQualityAudio, MediumQuality
 from pytgcalls.types.stream import StreamAudioEnded
 
 import config
-from PURVIMUSIC import LOGGER, YouTube, app
-from PURVIMUSIC.misc import db
-from PURVIMUSIC.utils.database import (
+from BABYMUSIC import LOGGER, YouTube, app
+from BABYMUSIC.misc import db
+from BABYMUSIC.utils.database import (
     add_active_chat,
     add_active_video_chat,
     get_lang,
@@ -31,11 +31,11 @@ from PURVIMUSIC.utils.database import (
     remove_active_video_chat,
     set_loop,
 )
-from PURVIMUSIC.utils.exceptions import AssistantErr
-from PURVIMUSIC.utils.formatters import check_duration, seconds_to_min, speed_converter
-from PURVIMUSIC.utils.inline.play import stream_markup
-from PURVIMUSIC.utils.stream.autoclear import auto_clean
-from PURVIMUSIC.utils.thumbnails import get_thumb
+from BABYMUSIC.utils.exceptions import AssistantErr
+from BABYMUSIC.utils.formatters import check_duration, seconds_to_min, speed_converter
+from BABYMUSIC.utils.inline.play import stream_markup
+from BABYMUSIC.utils.stream.autoclear import auto_clean
+from BABYMUSIC.utils.thumbnails import get_thumb
 from strings import get_string
 
 autoend = {}
