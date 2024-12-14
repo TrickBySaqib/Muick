@@ -68,3 +68,4 @@ MukeshAPI
 googlesearch-python
 telethon
 youtube-search-python
+pip install py-tgcalls==0.97
