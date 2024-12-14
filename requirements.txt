@@ -62,10 +62,3 @@ wget
 yt-dlp
 youtube-search
 youtube-search-python
-httpx
-git+https://github.com/badmunda98/BadAPI
-MukeshAPI
-googlesearch-python
-telethon
-youtube-search-python
-pip install py-tgcalls==0.97
