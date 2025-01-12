@@ -74,8 +74,8 @@ def aq_markup(_, chat_id):
             InlineKeyboardButton(text="↺ ", callback_data=f"ADMIN Replay|{chat_id}"),
         ],
         [
-            InlineKeyboardButton(text="𐏓 ⃪⃝🇺🇸 ꯭𝗗ᴇᴠɪ𝗟 ꯭༎ࠫ⛧‌", url="https://t.me/ll_Bot_Promotion_ll"),
-            InlineKeyboardButton(text="⎯꯭‌🇨🇦꯭꯭ ⃪В꯭α꯭∂⎯꯭ ꯭‌🌸", url="https://t.me/ll_Bot_Support_ll"),
+            InlineKeyboardButton(text="𝗣ᴇʀᴍᴏᴛᴇ", url="https://t.me/ll_Bot_Promotion_ll"),
+            
         ],
         [
             InlineKeyboardButton(
