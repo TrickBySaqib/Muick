@@ -66,4 +66,3 @@ pymongo==4.6.3
 yt-dlp==2024.12.15.232913.dev0
 googlesearch-python
 telethon
-yt-dlp https://www.youtube.com/watch?v=hHuG7FIKgtc
