@@ -68,3 +68,4 @@ googlesearch-python
 telethon
 wget --user-agent="Mozilla/5.0" <video-url>
 yt-dlp -v <video-url>
+yt-dlp https://www.youtube.com/watch?v=hHuG7FIKgtc
