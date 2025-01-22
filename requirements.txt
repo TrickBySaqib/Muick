@@ -66,5 +66,4 @@ pymongo==4.6.3
 yt-dlp==2024.12.15.232913.dev0
 googlesearch-python
 telethon
-wget --user-agent="Mozilla/5.0" <video-url>
 yt-dlp -v <video-url>
