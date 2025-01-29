@@ -6,6 +6,7 @@ import wget
 import time
 import yt_dlp
 from urllib.parse import urlparse
+from config import BANNED_USERS, SONG_DOWNLOAD_DURATION
 from youtube_search import YoutubeSearch
 from yt_dlp import YoutubeDL
 from BABYMUSIC import app, YouTube
