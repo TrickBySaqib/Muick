@@ -65,6 +65,8 @@ PLAYLIST_IMG_URL = getenv("PLAYLIST_IMG_URL", "https://telegra.ph/file/f4edfbd83
 GLOBAL_IMG_URL = getenv("GLOBAL_IMG_URL", "https://telegra.ph/file/de1db74efac1770b1e8e9.jpg")
 STATS_IMG_URL = getenv("STATS_IMG_URL", "https://telegra.ph/file/4dd9e2c231eaf7c290404.jpg")
 YOUTUBE_IMG_URL = "https://telegra.ph/file/76d29aa31c40a7f026d7e.jpg"
+SOUNCLOUD_IMG_URL = "https://telegra.ph/file/7645d1e04021323c21db9.jpg"
+
 
 
 # Duration limits for songs in seconds
