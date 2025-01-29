@@ -16,12 +16,12 @@ API_HASH = getenv("API_HASH","3030874d0befdb5d05597deacc3e83ab")
 BOT_TOKEN = getenv("BOT_TOKEN", "7453423431:AAEP3MUFCKyyCzIgRowY_9MQdaiY82JHBCk")
 # ________________________________________________________________________________#
 # Get your mongo url from cloud.mongodb.com
-MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://TEAMBABY01:UTTAMRATHORE09@cluster0.vmjl9.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://TrickBy:TrickBy87554412@cluster0.hev6dq9.mongodb.net/")
 # ________________________________________________________________________________#
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 17000))
 # ________________________________________________________________________________#
 # Chat id of a group for logging bot's activities
-LOGGER_ID = int(getenv("LOGGER_ID","-1002144680265"))
+LOGGER_ID = int(getenv("LOGGER_ID","-1002022622141"))
 # ________________________________________________________________________________#
 # Get this value from  on Telegram by /id
 OWNER_ID = int(getenv("OWNER_ID","6625936112"))
@@ -47,7 +47,7 @@ GIT_TOKEN = getenv(
 # ________________________________________________________________________________#
 SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/ll_Bot_Promotion_ll")
 SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/+aTJJeCRGKac0MTU1")
-OWNER_USERNAME = getenv("OWNER_USERNAME", "UTTAM470")
+OWNER_USERNAME = getenv("OWNER_USERNAME", "@ll_Oye_Zayn_ll")
 # ________________________________________________________________________________#
 # Set this to True if you want the assistant to automatically leave chats
 # after an interval
