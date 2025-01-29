@@ -70,6 +70,8 @@ STREAM_IMG_URL = "https://telegra.ph/file/e24f4a5f695ec5576a8f3.jpg"
 TELEGRAM_AUDIO_URL = "https://telegra.ph/file/8234d704952738ebcda7f.jpg"
 TELEGRAM_VIDEO_URL = "https://telegra.ph/file/8d02ff3bde400e465219a.jpg"
 
+# Song download duration (in seconds), default is 180 seconds if not set
+SONG_DOWNLOAD_DURATION = int(getenv("SONG_DOWNLOAD_DURATION", 180))
 
 
 
