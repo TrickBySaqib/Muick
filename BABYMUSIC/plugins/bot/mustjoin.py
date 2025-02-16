@@ -46,3 +46,5 @@ async def must_join_channel(app: Client, msg: Message):
             pass  # यदि यूजर ने बॉट को ब्लॉक किया है, तो कुछ न करें
     except ChatAdminRequired:
         print(f"मुझे {MUST_JOIN} में एडमिन एक्सेस की आवश्यकता है।")
+    except Exception as e:
+        print(f"An error occurred: {e}")
